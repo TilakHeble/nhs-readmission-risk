@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nhs-readmission-risk"
+version = "0.1.0"
+description = "NHS 30-day emergency readmissions: grouped logistic risk adjustment, funnel-plot benchmarking and a patient-level risk score"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "statsmodels>=0.14",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "pandera>=0.20",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov", "ruff>=0.5", "pre-commit", "jupyter", "nbconvert"]
+dashboard = ["streamlit>=1.40", "altair>=5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 125
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"dashboards/app.py" = ["E501", "E402"]  # Altair chart specs; sys.path set before imports
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

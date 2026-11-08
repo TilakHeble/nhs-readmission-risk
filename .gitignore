@@ -1,0 +1,17 @@
+# derived data (raw public data IS committed: Open Government Licence v3.0)
+data/processed/*
+!data/processed/.gitkeep
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+
+# tooling
+.env
+.DS_Store
