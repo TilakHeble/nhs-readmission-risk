@@ -1,0 +1,31 @@
+{
+  "name": "baseline",
+  "formula": "los_days + emergency + charlson + prior_ed_6m + prior_adm_12m + care_home + polypharmacy + medical_specialty + weekend_discharge + C(age_band) + sex + C(imd) + ward_occupancy + discharge_hour",
+  "params": {
+    "Intercept": -2.8418796921767306,
+    "C(age_band)[T.<16]": 0.3714120046740834,
+    "C(age_band)[T.75+]": -0.3728377290104069,
+    "sex[T.Male]": 0.05013759539504657,
+    "C(imd)[T.2]": -0.0018866394173594418,
+    "C(imd)[T.3]": 0.031271482390405614,
+    "C(imd)[T.4]": 0.05904907374649708,
+    "C(imd)[T.5]": 0.09602717531908221,
+    "los_days": 0.039958902777966855,
+    "emergency": 0.6072450629520242,
+    "charlson": 0.3192281236034202,
+    "prior_ed_6m": 0.16912077453627622,
+    "prior_adm_12m": 0.27426802920761817,
+    "care_home": 0.29810760033766065,
+    "polypharmacy": 0.25440802229910325,
+    "medical_specialty": 0.1887485769868461,
+    "weekend_discharge": 0.08726824848261679,
+    "ward_occupancy": -0.23567179545099648,
+    "discharge_hour": 0.0017648545215497285
+  },
+  "train_years": [
+    "2022/23",
+    "2023/24"
+  ],
+  "n_train": 157229,
+  "metrics": {}
+}

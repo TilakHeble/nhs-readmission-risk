@@ -14,6 +14,7 @@ import pandas as pd
 import statsmodels.formula.api as smf
 
 from nhsread.config import MODELS_DIR
+from nhsread.evaluation.metrics import lace_score
 
 TRAIN_YEARS = ["2022/23", "2023/24"]
 TEST_YEAR = "2024/25"
@@ -33,6 +34,9 @@ CHAMPION_FORMULA = (
     " + polypharmacy + medical_specialty + weekend_discharge + C(age_band) + sex + C(imd)"
 )
 
+# LACE index recalibrated as a one-variable logistic model (the comparator used in practice).
+LACE_FORMULA = "lace"
+
 NUMERIC_FEATURES = [
     "age", "los_days", "emergency", "charlson", "prior_ed_6m", "prior_adm_12m", "care_home",
     "polypharmacy", "medical_specialty", "weekend_discharge", "ward_occupancy", "discharge_hour",
@@ -46,6 +50,7 @@ def add_features(df: pd.DataFrame) -> pd.DataFrame:
     d["age_band"] = pd.Categorical(d["age_band"], categories=["16-74", "<16", "75+"])
     d["sex"] = pd.Categorical(d["sex"], categories=["Female", "Male"])
     d["imd"] = pd.Categorical(d["imd"].astype(int), categories=[1, 2, 3, 4, 5])
+    d["lace"] = lace_score(d["los_days"], d["emergency"], d["charlson"], d["prior_ed_6m"])
     return d
 
 

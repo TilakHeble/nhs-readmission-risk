@@ -1,0 +1,14 @@
+{
+  "name": "lace",
+  "formula": "lace",
+  "params": {
+    "Intercept": -2.976267553757643,
+    "lace": 0.19164486872854608
+  },
+  "train_years": [
+    "2022/23",
+    "2023/24"
+  ],
+  "n_train": 157229,
+  "metrics": {}
+}

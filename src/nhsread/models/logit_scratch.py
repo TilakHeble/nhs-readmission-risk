@@ -132,7 +132,7 @@ def fit_logit(
         W = w * n * p * (1 - p)  # IRLS weights
         grad = X.T @ (w * (y - n * p)) - pen * beta
         H = (X * W[:, None]).T @ X + np.diag(pen)  # negative Hessian = Fisher information
-        step = np.linalg.solve(H, grad)
+        step = np.linalg.lstsq(H, grad, rcond=None)[0]  # lstsq: survives near-singular H under separation
         # step-halving keeps Newton stable near separation
         old = _loglik(y, n, p, w) - 0.5 * np.sum(pen * beta**2)
         t = 1.0
@@ -150,7 +150,7 @@ def fit_logit(
     p = sigmoid(X @ beta)
     W = w * n * p * (1 - p)
     H = (X * W[:, None]).T @ X + np.diag(pen)
-    cov = np.linalg.inv(H)
+    cov = np.linalg.pinv(H)  # pseudo-inverse: SEs blow up (rather than crash) under separation
     pearson = float(np.sum(w * (y - n * p) ** 2 / (n * p * (1 - p))))
     return LogitResult(
         params=beta,
