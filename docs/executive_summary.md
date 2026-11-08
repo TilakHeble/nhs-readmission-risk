@@ -5,7 +5,7 @@
 2. Who is readmitted, and is the gap between deprived and affluent areas closing?
 3. How would a hospital build, validate and use a patient-level readmission risk score?
 
-**Data.** Parts 1 and 2 use the real NHS England *Compendium: Emergency readmissions to hospital within 30 days of discharge* (I02040, 2025 release): 64.7 million discharges, 2014/15 to 2024/25, by trust, deprivation, age, sex and specialty. Patient-level hospital records (HES) are not public, so Part 3 uses a 240,000-patient **synthetic** cohort whose demographic mix and readmission rates match the real data exactly, with assumed clinical effects.
+**Data.** Questions 1 and 2 (Part 1 of the project) use the real NHS England *Compendium: Emergency readmissions to hospital within 30 days of discharge* (I02040, 2025 release): 64.7 million discharges, 2014/15 to 2024/25, by trust, deprivation, age, sex and specialty. Patient-level hospital records (HES) are not public, so question 3 (Part 2) uses a 240,000-patient **synthetic** cohort whose demographic mix and readmission rates match the real data exactly, with assumed clinical effects.
 
 ## Key findings
 
@@ -33,7 +33,7 @@ The model is calibrated within every deprivation, age and sex group (O/E 0.99 to
 ## Limitations
 
 * Part 1 is ecological (aggregated) and adjusts only for age and sex; specialty and diagnosis mix would explain much of the trust variation. Counts are rounded to 5.
-* Part 3 uses synthetic patients: it demonstrates method, not real-world performance. Before clinical use, a model must be developed and externally validated on real records, with a clinical safety case (DCB0129/DCB0160).
+* Part 2 uses synthetic patients: it demonstrates method, not real-world performance. Before clinical use, a model must be developed and externally validated on real records, with a clinical safety case (DCB0129/DCB0160).
 * Cost figures are illustrative assumptions, not NHS reference costs.
 
 See the [model development document](model_development_document.md) and [validation report](validation_report.md) for detail.
