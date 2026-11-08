@@ -1,0 +1,10 @@
+streamlit>=1.40
+altair>=5
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+statsmodels>=0.14
+scikit-learn>=1.4
+pandera>=0.20
+pyarrow>=14.0
+matplotlib>=3.8
