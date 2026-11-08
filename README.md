@@ -1,12 +1,13 @@
 # NHS 30-day Readmissions: Risk Adjustment, Benchmarking & Patient Risk Scoring
 
 [![ci](https://github.com/TilakHeble/nhs-readmission-risk/actions/workflows/ci.yml/badge.svg)](https://github.com/TilakHeble/nhs-readmission-risk/actions/workflows/ci.yml)
+[![Live dashboard](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nhs-readmission-risk.streamlit.app/)
 
 **Which NHS hospital trusts have more emergency readmissions than their patients would predict? Is the gap between deprived and affluent areas closing? And how would a hospital build, validate and use a risk score to decide who gets follow-up after discharge?**
 
 Logistic regression, end to end. The project uses the **real NHS England readmissions data** (64.7 million discharges, 2014/15 to 2024/25) to rebuild and improve the NHS's own benchmarking method, and a transparent **synthetic patient cohort**, anchored to those real rates, to build and validate a patient-level risk model.
 
-- 📊 **Dashboard** (`dashboards/app.py`): trust funnel explorer, inequality trends and a patient risk calculator with a cost-based follow-up decision
+- 📊 **[Live dashboard](https://nhs-readmission-risk.streamlit.app/)**: trust funnel explorer, inequality trends and a patient risk calculator with a cost-based follow-up decision
 - 📄 **[Executive summary](docs/executive_summary.md)** · [Model development document](docs/model_development_document.md) · [Validation report](docs/validation_report.md)
 - 🎓 **[learn/](learn/README.md)**: a 10-lesson logistic regression course, from basics to industry practice, built on this project's data
 
@@ -69,7 +70,7 @@ make notebooks    # execute notebooks 01-06
 make dashboard    # streamlit run dashboards/app.py
 ```
 
-To deploy the dashboard on Streamlit Community Cloud: entry point `dashboards/app.py`, dependencies `dashboards/requirements.txt`.
+The dashboard is deployed on Streamlit Community Cloud at **https://nhs-readmission-risk.streamlit.app/** (entry point `dashboards/app.py`, dependencies `dashboards/requirements.txt`; first visit may take ~30 s to wake up).
 
 ## Repository layout
 
