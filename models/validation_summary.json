@@ -1,0 +1,37 @@
+{
+  "validation_year": "2024/25",
+  "n_validation": 82771,
+  "event_rate": 0.14781747230310133,
+  "auc": {
+    "champion": 0.6724021925591509,
+    "baseline": 0.6692390172160173,
+    "lace": 0.6501134531829811,
+    "oracle (true risk)": 0.6763522702617946
+  },
+  "calibration_slope": {
+    "champion": 0.9780889399189621,
+    "baseline": 0.9778355683485296,
+    "lace": 0.9844302978721463,
+    "oracle (true risk)": 0.9918702708558738
+  },
+  "calibration_in_the_large": {
+    "champion": 0.011365187199715765,
+    "baseline": 0.011722612745322014,
+    "lace": 0.009273371920193852,
+    "oracle (true risk)": 0.0051582102214745695
+  },
+  "brier": {
+    "champion": 0.11862709389837854,
+    "baseline": 0.11905244019525107,
+    "lace": 0.12062641846625083,
+    "oracle (true risk)": 0.11826413712554627
+  },
+  "bootstrap_optimism_auc": 7.94019012588798e-05,
+  "cost_assumptions": {
+    "intervention": 150,
+    "readmission": 2500,
+    "effectiveness": 0.2
+  },
+  "cost_optimal_threshold": 0.31499999999999995,
+  "saving_per_discharge": 2.5147696657041365
+}
