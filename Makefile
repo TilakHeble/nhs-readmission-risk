@@ -5,6 +5,7 @@ install:
 
 data:
 	python -m nhsread.ingest.build
+	python -m nhsread.synth.simulate
 
 test:
 	pytest -q
